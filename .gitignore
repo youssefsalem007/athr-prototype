@@ -7,5 +7,6 @@ dist
 server/data/
 
 # NOTE: .env files are intentionally committed — this prototype uses
+
 # fake/sample data only. Remove them before adding any real secrets.
 
