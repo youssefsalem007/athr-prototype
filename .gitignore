@@ -1,7 +1,11 @@
 node_modules
 dist
-.env
-.env.development
-server/data/db.json
 *.log
 .DS_Store
+
+# Runtime JSON store (local only; on Vercel it lives in /tmp)
+server/data/
+
+# NOTE: .env files are intentionally committed — this prototype uses
+# fake/sample data only. Remove them before adding any real secrets.
+

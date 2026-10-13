@@ -2,7 +2,11 @@
   "name": "athr-prototype",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "ATHR (أثر) luxury fragrance storefront prototype — client + server",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "dev": "concurrently -n server,client -c magenta,cyan \"npm:dev:server\" \"npm:dev:client\"",
     "dev:server": "npm --prefix server run dev",
