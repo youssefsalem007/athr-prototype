@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ink text-cream font-body antialiased;
+  /* Black marble texture, CSS only */
+  background-image:
+    radial-gradient(1200px 600px at 20% 0%, rgba(201, 162, 75, 0.08), transparent 60%),
+    radial-gradient(900px 500px at 90% 100%, rgba(201, 162, 75, 0.06), transparent 55%),
+    linear-gradient(115deg, transparent 47%, rgba(232, 200, 114, 0.05) 48%, transparent 50%),
+    linear-gradient(65deg, transparent 62%, rgba(232, 200, 114, 0.045) 63%, transparent 65%),
+    linear-gradient(200deg, transparent 30%, rgba(232, 200, 114, 0.04) 31%, transparent 33%),
+    linear-gradient(160deg, #0a0a0a, #050505);
+  background-attachment: fixed;
+}
+
+/* Gold hairline divider */
+.hairline {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(201, 162, 75, 0.5),
+    transparent
+  );
+}
+
+/* Metallic gold text */
+.text-gold-gradient {
+  background: linear-gradient(120deg, #8a6a2a 0%, #c9a24b 30%, #e8c872 50%, #c9a24b 72%, #8a6a2a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Gold gradient button */
+.btn-gold {
+  background: linear-gradient(120deg, #8a6a2a 0%, #c9a24b 35%, #e8c872 55%, #c9a24b 75%, #8a6a2a 100%);
+  background-size: 200% auto;
+  color: #0a0a0a;
+  transition: background-position 0.6s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+.btn-gold:hover {
+  background-position: right center;
+  box-shadow: 0 10px 40px -12px rgba(201, 162, 75, 0.55);
+  transform: translateY(-1px);
+}
+
+.btn-outline-gold {
+  border: 1px solid rgba(201, 162, 75, 0.5);
+  color: #e8c872;
+  transition: all 0.3s ease;
+}
+.btn-outline-gold:hover {
+  background: rgba(201, 162, 75, 0.12);
+  border-color: #c9a24b;
+}
+
+/* Card surface with subtle gold edge */
+.surface-card {
+  background: linear-gradient(160deg, #141414, #0f0f0f);
+  border: 1px solid rgba(201, 162, 75, 0.14);
+}
+.surface-card:hover {
+  border-color: rgba(201, 162, 75, 0.4);
+}
+
+/* Announcement marquee */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee 28s linear infinite;
+}
+
+/* RTL tweaks */
+[dir="rtl"] .flip-x {
+  transform: scaleX(-1);
+}
+
+/* Thin gold scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#8a6a2a, #c9a24b);
+  border-radius: 9999px;
+  border: 2px solid #0a0a0a;
+}
+
+::selection {
+  background: rgba(201, 162, 75, 0.35);
+  color: #f5f1e8;
+}
